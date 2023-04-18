@@ -10,7 +10,7 @@ public class CreratureManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        genes = this.GetComponent<GenesManager>().genes;
+        genes = GetComponent<GenesManager>().genesArray;
         CreatureColor();
     }
 

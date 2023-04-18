@@ -139,13 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d31a78fe2a9b4842a5a51ac84840630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genes:
-  - 0.6865349
-  - 0.59223765
-  - 0.045963526
-  - 0.08878112
-  - 0.6179885
-  numGenes: 5
+  genesList: []
+  genesArray: []
 --- !u!114 &-1708595200775792242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86108509dd19c140900c4327aa5b77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7804960971337125100
 GameObject:
   m_ObjectHideFlags: 0
