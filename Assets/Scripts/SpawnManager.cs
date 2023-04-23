@@ -21,15 +21,16 @@ public class SpawnManager : MonoBehaviour
             creaturePrefab.GetComponent<GenesManager>().InitializeGenes();
 
             // Instantiate creature prefab
-            Instantiate(creaturePrefab, CreatureSpawnLocation(), transform.rotation);
+            Instantiate(creaturePrefab, RndSpawnLocation(), Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward));
         }
     }
 
-    private Vector2 CreatureSpawnLocation()
+    private Vector2 RndSpawnLocation()
     {
         float x = Random.Range(-spawnArea.x / 2, spawnArea.x / 2);
         float y = Random.Range(-spawnArea.y / 2, spawnArea.y / 2);
         Vector2 spawnPosition = new Vector2(x, y);
         return spawnPosition;
     }
+
 }

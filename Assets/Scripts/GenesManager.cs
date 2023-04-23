@@ -9,17 +9,17 @@ public class GenesManager : MonoBehaviour
     public List<float> genesList;  // List.AddRange(array[]) to add an array to a list
     public float[] genesArray;
 
-    // This works, but I should probably use a dictionary, it would be easier to use. It would be slower though, so I don't really know.
+    // I tried to use dictionaries. It didn't work. Maybe I'll try again in the future.
 
     public void InitializeGenes()
     {   // Initialize each set of genes with random values
         genesList.Clear();
 
         genesList.AddRange(RndColor(128, 255));
-        genesList.Add(SizeMultiplier(0.5f, 2));
+        genesList.AddRange(RndSize(0.75f, 1.25f));
         // Other genes will be added
 
-        // Store in an array to improve performance when getting values 
+        // Store in an array to (possibly) improve performance when getting values 
         genesArray = genesList.ToArray();
     }
 
@@ -32,9 +32,12 @@ public class GenesManager : MonoBehaviour
         return rgb;
     }
 
-    private float SizeMultiplier(float lowLimit, float highLimit)
-    {   // Sets the size of the creature
-        // Code to generate random size.
-        return 1;
+    private float[] RndSize(float lowLimit, float highLimit)
+    {
+        // Sets the size of the creature
+        float width = UnityEngine.Random.Range(lowLimit, highLimit);
+        float length = UnityEngine.Random.Range(lowLimit, highLimit);
+        float[] size = {width, length };
+        return size;
     }
 }

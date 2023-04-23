@@ -12,6 +12,7 @@ public class CreratureManager : MonoBehaviour
     {
         genes = GetComponent<GenesManager>().genesArray;
         CreatureColor();
+        CreratureSizeXY();
     }
 
     // Update is called once per frame
@@ -24,5 +25,10 @@ public class CreratureManager : MonoBehaviour
     {
         color = new Color(genes[0], genes[1], genes[2]);
         this.GetComponent<SpriteRenderer>().color = color;
+    }
+
+    private void CreratureSizeXY()
+    {
+        transform.localScale = new Vector3(genes[3], genes[4], 1);
     }
 }
