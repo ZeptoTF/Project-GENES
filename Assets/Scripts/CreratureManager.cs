@@ -29,6 +29,6 @@ public class CreratureManager : MonoBehaviour
 
     private void CreratureSizeXY()
     {
-        transform.localScale = new Vector3(genes[3], genes[4], 1);
+        transform.localScale *= genes[3];
     }
 }

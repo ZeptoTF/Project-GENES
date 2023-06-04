@@ -16,7 +16,7 @@ public class GenesManager : MonoBehaviour
         genesList.Clear();
 
         genesList.AddRange(RndColor(128, 255));
-        genesList.AddRange(RndSize(0.75f, 1.25f));
+        genesList.AddRange(RndSize(0.5f, 1.25f));
         // Other genes will be added
 
         // Store in an array to (possibly) improve performance when getting values 
@@ -25,9 +25,9 @@ public class GenesManager : MonoBehaviour
 
     private float[] RndColor(float lowLimit, float highLimit)
     {   // Generates the color
-        float r = UnityEngine.Random.Range(lowLimit, highLimit + 1)/255;
-        float g = UnityEngine.Random.Range(lowLimit, highLimit + 1)/255;
-        float b = UnityEngine.Random.Range(lowLimit, highLimit + 1)/255;
+        float r = UnityEngine.Random.Range(lowLimit, highLimit)/255;
+        float g = UnityEngine.Random.Range(lowLimit, highLimit)/255;
+        float b = UnityEngine.Random.Range(lowLimit, highLimit)/255;
         float[] rgb = {r, g, b};
         return rgb;
     }
@@ -35,9 +35,8 @@ public class GenesManager : MonoBehaviour
     private float[] RndSize(float lowLimit, float highLimit)
     {
         // Sets the size of the creature
-        float width = UnityEngine.Random.Range(lowLimit, highLimit);
-        float length = UnityEngine.Random.Range(lowLimit, highLimit);
-        float[] size = {width, length };
+        float scale = UnityEngine.Random.Range(lowLimit, highLimit);
+        float[] size = {scale};
         return size;
     }
 }
