@@ -136,7 +136,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.05
   m_AngularDrag: 0.05
@@ -165,15 +165,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genesList:
-  - 0.73566186
-  - 0.8338386
-  - 0.7538069
-  - 1.1922848
+  - 0.6729029
+  - 0.40623564
+  - 0.88842255
+  - 0.7660291
+  - 0.5998856
   genesArray:
-  - 0.73566186
-  - 0.8338386
-  - 0.7538069
-  - 1.1922848
+  - 0.6729029
+  - 0.40623564
+  - 0.88842255
+  - 0.7660291
+  - 0.5998856
 --- !u!114 &-1708595200775792242
 MonoBehaviour:
   m_ObjectHideFlags: 0
