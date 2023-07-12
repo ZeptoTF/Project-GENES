@@ -17,14 +17,12 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfCreatures; i++)
         {
-            // Call Genes script to initialize gene array with random values
-            //creaturePrefab.GetComponent<GenesManager>().InitializeGenes();
-
-            // Instantiate creature prefab and change mass
+            // Instantiate creature prefab
             GameObject clone;
             clone = Instantiate(creaturePrefab, RndSpawnLocation(), Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward));
+
+            // Call Genes script to initialize gene array with random values
             clone.GetComponent<GenesManager>().InitializeGenes();
-            clone.GetComponent<Rigidbody2D>().mass = clone.GetComponent<GenesManager>().genesArray[2];
         }
     }
 

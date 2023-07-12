@@ -13,8 +13,26 @@ public class CreratureManager : MonoBehaviour
     void Start()
     {
         genes = GetComponent<GenesManager>().genesArray;
-        CreratureSize();
+        CreatureSize();
+        CreatureMass();
         CreatureColor();
+    }
+
+    private void CreatureSize()
+    {
+        transform.localScale *= genes[0];
+    }
+
+    private void CreatureMass()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.mass = genes[2];
+    }
+
+    private void CreatureColor()
+    {
+        color = new Color(genes[2], genes[3], genes[4]);
+        this.GetComponent<SpriteRenderer>().color = color;
     }
 
     // Update is called once per frame
@@ -23,14 +41,4 @@ public class CreratureManager : MonoBehaviour
         
     }
 
-    private void CreratureSize()
-    {
-        transform.localScale *= genes[0];
-    }
-
-    private void CreatureColor()
-    {
-        color = new Color(genes[2], genes[3], genes[4]);
-        this.GetComponent<SpriteRenderer>().color = color;
-    }
 }
