@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261792dfd8c426e4eb2ce5b07c496ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 7804960971070756103, guid: 295db98f90251b6438858e73658935c8, type: 3}
+  defaultCreaturePrefab: {fileID: 2773995890341586718, guid: 737d95f1d18b4884893aeabc4b3686b2, type: 3}
   numberOfCreatures: 100
   spawnArea: {x: 10, y: 10}
 --- !u!4 &1124892782

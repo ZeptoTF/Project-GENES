@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject creaturePrefab; // Public variable for the creature prefab
+    public GameObject defaultCreaturePrefab; // Public variable for the creature prefab
     public int numberOfCreatures = 10; // Public variable for the number of creatures to spawn
     public Vector2 spawnArea = new Vector2(10, 10); // Active spawning area
 
@@ -19,10 +19,10 @@ public class SpawnManager : MonoBehaviour
         {
             // Instantiate creature prefab
             GameObject clone;
-            clone = Instantiate(creaturePrefab, RndSpawnLocation(), Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward));
+            clone = Instantiate(defaultCreaturePrefab, RndSpawnLocation(), Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward));
 
             // Call Genes script to initialize gene array with random values
-            clone.GetComponent<GenesManager>().InitializeGenes();
+            clone.GetComponent<DefaultGenesManager>().InitializeGenes();
         }
     }
 
