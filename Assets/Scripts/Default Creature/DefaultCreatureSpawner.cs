@@ -33,5 +33,4 @@ public class SpawnManager : MonoBehaviour
         Vector2 spawnPosition = new Vector2(x, y);
         return spawnPosition;
     }
-
 }
