@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2930811637495619662}
   - component: {fileID: 5537317403968470910}
   - component: {fileID: 3540554014632156647}
+  - component: {fileID: 6770117282556813189}
   m_Layer: 0
   m_Name: Default Creature
   m_TagString: Untagged
@@ -180,7 +181,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  mass: 0
+--- !u!114 &6770117282556813189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2773995890341586718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa4120cbff70e44da87bb5fe7b81df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creaturePrefab: {fileID: 7804960971070756103, guid: 295db98f90251b6438858e73658935c8, type: 3}
+  startTime: 0
+  elapsedTime: 0
 --- !u!1 &6206875514524980023
 GameObject:
   m_ObjectHideFlags: 0

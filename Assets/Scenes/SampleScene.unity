@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCreaturePrefab: {fileID: 2773995890341586718, guid: 737d95f1d18b4884893aeabc4b3686b2, type: 3}
-  numberOfCreatures: 100
+  numberOfCreatures: 10
   spawnArea: {x: 10, y: 10}
 --- !u!4 &1124892782
 Transform:

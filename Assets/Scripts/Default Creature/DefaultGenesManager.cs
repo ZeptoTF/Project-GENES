@@ -8,6 +8,7 @@ public class DefaultGenesManager : MonoBehaviour
 {
     public List<float> genesList;  // List.AddRange(array[]) to add an array to a list
     public float[] genesArray;
+    private float[] limits = Constants.limits;
 
     // I tried to use dictionaries. It didn't work. Maybe I'll try again in the future.
 
@@ -15,40 +16,40 @@ public class DefaultGenesManager : MonoBehaviour
     {   // Initialize each set of genes with random values
         genesList.Clear();
 
-        genesList.Add(1);                                           //0
-        genesList.Add(RndShieldPercentage(0, 1));
+        genesList.Add(1);                                                               //0
+        genesList.Add(RndShieldPercentage(limits[2], limits[3]));
         genesList.Add(Mass());
-        genesList.Add(RndColorR(128, 255));
-        genesList.Add(RndColorG(128, 255));
-        genesList.Add(RndColorB(128, 255));                         //5
+        genesList.Add(RndColorR(limits[4], limits[5]));
+        genesList.Add(RndColorG(limits[6], limits[7]));
+        genesList.Add(RndColorB(limits[8], limits[9]));                                 //5
+        genesList.Add(0.5f);
         genesList.Add(0.05f);
-        genesList.Add(0.05f);
-        genesList.Add(MaturityAge(150, 250));
-        genesList.Add(OldnessAge(400, 600));
-        genesList.Add(0);                                           //10
+        genesList.Add(MaturityAge(limits[14], limits[15]));
+        genesList.Add(OldnessAge(limits[16], limits[17]));
+        genesList.Add(0);                                                               //10
         genesList.Add(0);
-        genesList.Add(EnergyProductionEfficiencyPercentage(0, 5));
+        genesList.Add(EnergyProductionEfficiencyPercentage(limits[20], limits[21]));
         genesList.Add(0);
-        genesList.Add(RotationSpeedMultiplier(0, Mathf.PI));
-        genesList.Add(TranslationSpeedMultiplier(0, 5));            //15
+        genesList.Add(RotationSpeedMultiplier(limits[22], limits[23]));
+        genesList.Add(TranslationSpeedMultiplier(limits[24], limits[25]));              //15
         genesList.Add(0);
-        genesList.Add(SmellSensitivityThresholdPhero1(0, 5));
+        genesList.Add(SmellSensitivityThresholdPhero1(limits[26], limits[27]));
         genesList.Add(0);
-        genesList.Add(SmellSensitivityThresholdPhero2(0, 5));
-        genesList.Add(0);                                           //20
-        genesList.Add(SmellSensitivityThresholdPhero3(0, 5));
-        genesList.Add(0);
+        genesList.Add(SmellSensitivityThresholdPhero2(limits[28], limits[29]));
+        genesList.Add(0);                                                               //20
+        genesList.Add(SmellSensitivityThresholdPhero3(limits[30], limits[31]));
         genesList.Add(0);
         genesList.Add(0);
-        genesList.Add(0);                                           //25
+        genesList.Add(0);
+        genesList.Add(0);                                                               //25
         genesList.Add(SecretionRadius(0, 3 * genesList[0]));
         genesList.Add(0);
         genesList.Add(0);
-        genesList.Add(FOVAngle(0, 2 * Mathf.PI));
-        genesList.Add(FOVRadius(0, 5));                             //30
-        genesList.Add(SightClarity(0, 25));
+        genesList.Add(FOVAngle(limits[34], limits[35]));
+        genesList.Add(FOVRadius(limits[36], limits[37]));                               //30
+        genesList.Add(SightClarity(limits[38], limits[39]));
         genesList.Add(0);
-        genesList.Add(CollisionSensitivityThreshold(0, 5));         //33
+        genesList.Add(CollisionSensitivityThreshold(limits[40], limits[41]));           //33
         // Technically all genes have been added
 
         // Store in an array to (possibly) improve performance when getting values  
