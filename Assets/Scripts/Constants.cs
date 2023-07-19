@@ -13,8 +13,8 @@ public static class Constants
         128, 255,           //5 ColorB
         0, 1,               //6 GenesMutationsProbabilty
         0, 1,               //7 BrainMutationsProbabilty
-        150, 250,           //8 MaturityAge
-        400, 600,           //9 OldnessAge
+        60, 300,            //8 MaturityAge
+        360, 600,           //9 OldnessAge
         0, 1,               //10 MaxExtraEnergyStoragePercentage
         0, 5,               //12 EnergyProductionEfficiencyPercentage
         0, Mathf.PI,        //14 RotationSpeedMultiplier

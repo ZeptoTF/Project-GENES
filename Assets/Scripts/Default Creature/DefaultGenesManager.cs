@@ -22,34 +22,35 @@ public class DefaultGenesManager : MonoBehaviour
         genesList.Add(RndColorR(limits[4], limits[5]));
         genesList.Add(RndColorG(limits[6], limits[7]));
         genesList.Add(RndColorB(limits[8], limits[9]));                                 //5
-        genesList.Add(0.5f);
+        genesList.Add(0.25f);
         genesList.Add(0.05f);
         genesList.Add(MaturityAge(limits[14], limits[15]));
         genesList.Add(OldnessAge(limits[16], limits[17]));
         genesList.Add(0);                                                               //10
+        genesList.Add(ExtraEnergyStoragePercentage(limits[18], limits[19]));
         genesList.Add(0);
         genesList.Add(EnergyProductionEfficiencyPercentage(limits[20], limits[21]));
         genesList.Add(0);
-        genesList.Add(RotationSpeedMultiplier(limits[22], limits[23]));
-        genesList.Add(TranslationSpeedMultiplier(limits[24], limits[25]));              //15
+        genesList.Add(RotationSpeedMultiplier(limits[22], limits[23]));                 //15
+        genesList.Add(TranslationSpeedMultiplier(limits[24], limits[25]));
         genesList.Add(0);
         genesList.Add(SmellSensitivityThresholdPhero1(limits[26], limits[27]));
         genesList.Add(0);
-        genesList.Add(SmellSensitivityThresholdPhero2(limits[28], limits[29]));
-        genesList.Add(0);                                                               //20
+        genesList.Add(SmellSensitivityThresholdPhero2(limits[28], limits[29]));         //20
+        genesList.Add(0);
         genesList.Add(SmellSensitivityThresholdPhero3(limits[30], limits[31]));
         genesList.Add(0);
         genesList.Add(0);
-        genesList.Add(0);
         genesList.Add(0);                                                               //25
+        genesList.Add(0);
         genesList.Add(SecretionRadius(0, 3 * genesList[0]));
         genesList.Add(0);
         genesList.Add(0);
-        genesList.Add(FOVAngle(limits[34], limits[35]));
-        genesList.Add(FOVRadius(limits[36], limits[37]));                               //30
+        genesList.Add(FOVAngle(limits[34], limits[35]));                                //30
+        genesList.Add(FOVRadius(limits[36], limits[37]));
         genesList.Add(SightClarity(limits[38], limits[39]));
         genesList.Add(0);
-        genesList.Add(CollisionSensitivityThreshold(limits[40], limits[41]));           //33
+        genesList.Add(CollisionSensitivityThreshold(limits[40], limits[41]));           //34
         // Technically all genes have been added
 
         // Store in an array to (possibly) improve performance when getting values  
@@ -97,11 +98,24 @@ public class DefaultGenesManager : MonoBehaviour
         return OldnessAge;
     }
 
+    private float ExtraEnergyStoragePercentage(float lowLimit, float highLimit)
+    {
+        float extraEnergyStoragePercentage;
+        if (genesList[10] == 1)
+        {
+            extraEnergyStoragePercentage = UnityEngine.Random.Range(lowLimit, highLimit);
+        }
+        else
+        {
+            extraEnergyStoragePercentage = -1;
+        }
+        return extraEnergyStoragePercentage;
+    }
+
     private float EnergyProductionEfficiencyPercentage(float lowLimit, float highLimit)
     {
-
         float energyProductionEfficiencyPercentage;
-        if (genesList[11] == 1)
+        if (genesList[12] == 1)
         {
             energyProductionEfficiencyPercentage = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -114,9 +128,8 @@ public class DefaultGenesManager : MonoBehaviour
 
     private float RotationSpeedMultiplier(float lowLimit, float highLimit)
     {
-
         float rotationSpeedMultiplier;
-        if (genesList[13] == 1)
+        if (genesList[14] == 1)
         {
             rotationSpeedMultiplier = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -130,7 +143,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float TranslationSpeedMultiplier(float lowLimit, float highLimit)
     {
         float translationSpeedMultiplier;
-        if (genesList[13] == 1)
+        if (genesList[14] == 1)
         {
             translationSpeedMultiplier = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -144,7 +157,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float SmellSensitivityThresholdPhero1(float lowLimit, float highLimit)
     {
         float smellSensitivityThresholdPhero1;
-        if (genesList[16] == 1)
+        if (genesList[17] == 1)
         {
             smellSensitivityThresholdPhero1 = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -158,7 +171,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float SmellSensitivityThresholdPhero2(float lowLimit, float highLimit)
     {
         float smellSensitivityThresholdPhero2;
-        if (genesList[18] == 1)
+        if (genesList[19] == 1)
         {
             smellSensitivityThresholdPhero2 = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -172,7 +185,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float SmellSensitivityThresholdPhero3(float lowLimit, float highLimit)
     {
         float smellSensitivityThresholdPhero3;
-        if (genesList[20] == 1)
+        if (genesList[21] == 1)
         {
             smellSensitivityThresholdPhero3 = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -186,7 +199,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float SecretionRadius(float lowLimit, float highLimit)
     {
         float secretionRadius;
-        if (genesList[22] == 1 || genesList[23] == 1 || genesList[24] == 1 || genesList[25] == 1)
+        if (genesList[23] == 1 || genesList[24] == 1 || genesList[25] == 1 || genesList[26] == 1)
         {
             secretionRadius = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -200,7 +213,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float FOVAngle(float lowLimit, float highLimit)
     {
         float fovAngle;
-        if (genesList[27] == 1 || genesList[28] == 1)
+        if (genesList[28] == 1 || genesList[29] == 1)
         {
             fovAngle = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -214,7 +227,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float FOVRadius(float lowLimit, float highLimit)
     {
         float fovRadius;
-        if (genesList[27] == 1 || genesList[28] == 1)
+        if (genesList[28] == 1 || genesList[29] == 1)
         {
             fovRadius = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -228,7 +241,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float SightClarity(float lowLimit, float highLimit)
     {   // How many rays are casted in the fov.
         float sightClarity;
-        if (genesList[27] == 1 || genesList[28] == 1)
+        if (genesList[28] == 1 || genesList[29] == 1)
         {
             sightClarity = UnityEngine.Random.Range(lowLimit, highLimit);
         }
@@ -242,7 +255,7 @@ public class DefaultGenesManager : MonoBehaviour
     private float CollisionSensitivityThreshold(float lowLimit, float highLimit)
     {
         float collisionSensitivityThreshold;
-        if (genesList[32] == 1)
+        if (genesList[33] == 1)
         {
             collisionSensitivityThreshold = UnityEngine.Random.Range(lowLimit, highLimit);
         }
