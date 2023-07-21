@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraPan : MonoBehaviour
 {
     [SerializeField] Camera cam;
 
     private Vector3 dragOrigin;
 
-    void Update()
+    private void LateUpdate()
     {
         PanCamera();
     }
