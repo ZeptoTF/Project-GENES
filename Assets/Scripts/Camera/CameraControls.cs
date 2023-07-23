@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraPan : MonoBehaviour
+public class CameraControl : MonoBehaviour
 {
     [SerializeField] Camera cam;
+    [SerializeField] float zoomStep = 0.1f, minZoom = 30, maxZoom = 1;
 
     private Vector3 dragOrigin;
+
 
     private void LateUpdate()
     {
         PanCamera();
+        //For now no scroll wheel.
+        ZoomCamera();
     }
 
     private void PanCamera()
@@ -26,6 +30,20 @@ public class CameraPan : MonoBehaviour
 
             //Move camera by that distance
             cam.transform.position += difference;
+        }
+    }
+
+    private void ZoomCamera()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            float newSize = cam.orthographicSize - zoomStep;
+            cam.orthographicSize = Mathf.Clamp(newSize, maxZoom, minZoom);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            float newSize = cam.orthographicSize + zoomStep;
+            cam.orthographicSize = Mathf.Clamp(newSize, maxZoom, minZoom);
         }
     }
 }
